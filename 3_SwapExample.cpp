@@ -3,19 +3,20 @@
 using namespace std;
 
 template <typename T>
-void swap(T *a, T *b)
+T swap(T x, T y, T temp)
 {
-  T temp = *a;
-  *a = *b;
-  *b = temp;
+  temp = x;
+  x = y;
+  y = temp;
+  return (x, y);
 }
 
 int main()
 {
   int a = 3;
   int b = 4;
+  int c;
   cout << "before swapping: " << a << "," << b << endl;
-  swap(&a, &b);
-  cout << "after swapping: " << a << ", " << b << endl;
+  cout << "After swapping: " << swap(a, b, c) << endl;
   return 0;
 }
